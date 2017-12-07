@@ -1,0 +1,14 @@
+*.pyc
+*.log
+*.lock
+.*
+
+!.gitignore
+!.gitkeep
+!.babelrc
+
+
+db.sqlite3
+
+frontend/dist/
+frontend/node_modules/
