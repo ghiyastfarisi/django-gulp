@@ -10,3 +10,6 @@ between releases.
 ## 2017-12-07
 ### Added
 - Initial commit with a basic configuration for generating a minimal Django app.
+
+
+[Unreleased]: https://github.com/StuartMacKay/django-gulp/compare/2017-12-07...HEAD
