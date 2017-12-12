@@ -16,17 +16,16 @@ a full production set up.
 # Getting Started
 
 Copy the bash script, bootstrap.sh, to the directory where you want to setup 
-your project and run it. The script generates all the files you see in the 
-frontend and backend directories to create a working Django project.
+your project and run it (you will need sudo rights to install some packages 
+at the system level). 
 
-The script is quite verbose - it's just a wrapper for all the shell commands
-needed to set things up. You will also be prompted for input, first for your
-password so nodejs, yarn and python3.6 can be installed. After that there 
-are several prompts for the data to setup the package.json file needed by
-yarn and gulp. The prompts are just for descriptive data so you can just hit 
-return to use the defaults. It won't affect the way the project is set up.
+```bash
+./bootstrap.sh
+```
 
-Once the script finishes. Run the following:
+The script generates all the files you see in the frontend and backend 
+directories to create a working Django project. Once the script finishes. 
+Run the following:
 
 ```bash
 cd frontend

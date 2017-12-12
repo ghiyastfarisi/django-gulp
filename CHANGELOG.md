@@ -7,6 +7,10 @@ changes are tracked with date stamps rather than versions. The repository
 will be tagged with dates so you will be able to easily see what changed
 between releases.
 
+## 2017-12-12
+### Changed
+- Simplified the Getting Started section in the README.
+
 ## 2017-12-07
 ### Added
 - Initial commit with a basic configuration for generating a minimal Django app.
