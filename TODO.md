@@ -1,9 +1,9 @@
 # To Do
 
 The project is bare-bones with just enough to make it work. Here is a 
-list of things we plan to do in the future:
+list of things that is planned for the near future:
 
-* Add more documentation to the bootstrap script.
+* Add more documentation to the bootstrap script to describe in detail
+  why everything is setup the way it is.
 * Add a recipes directory which will contain gulp file snippets to add 
-  more features to the project, eg. support for for SASS, minification,
-  etc.
+  more features to the project.
