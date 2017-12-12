@@ -11,6 +11,7 @@ between releases.
 ### Changed
 - Simplified the Getting Started section in the README.
 - Added -y flag to yarn init to simplify initial setup.
+- Changed gulp file to only use ECMAScript 5.1 so we don't need babel for transpiling just yet.
 
 ## 2017-12-07
 ### Added

@@ -144,29 +144,10 @@ cd frontend
 
 yarn init -y
 
-# Install babel
-#
-# Babel changed the way it is packaged in v6. See the link in Resources
-# for more information.
-#
-# babel-preset-env supports all the additions to javascript from 2015 onwards.
-
-yarn global add babel-cli
-yarn add --dev babel-core
-yarn add --dev babel-preset-env
-
-cat << EOF > .babelrc
-{
-  "presets": ["env"]
-}
-EOF
-
-
 # Install gulp
 
 yarn global add gulp-cli
 yarn add --dev gulp
-yarn add --dev gulp-babel
 yarn add --dev gulp-concat
 
 # You will get a deprecation warning for graceful-fs. This can safely be ignored,
@@ -179,34 +160,29 @@ yarn add --dev del
 
 # Create a gulpfile
 
-# The typical name for a gulp file is gulpfile.js. This form tells gulp to
-# transpile the code using babel before running it.
+cat << EOF > gulpfile.js
+var gulp = require('gulp');
+var del = require('del');
 
-cat << EOF > gulpfile.babel.js
-import gulp from 'gulp';
-import del from 'del';
-
-import babel from 'gulp-babel';
-import concat from 'gulp-concat';
+var concat = require('gulp-concat');
 
 
 gulp.task('clean', del.bind(null, ['dist']));
 
 gulp.task('build', ['styles', 'scripts']);
 
-gulp.task('default', ['clean'], () => {
+gulp.task('default', ['clean'], function() {
   gulp.start('build')
 });
 
-gulp.task('styles', () => {
+gulp.task('styles', function() {
   return gulp.src('styles/**/*.css')
     .pipe(concat('project.css'))
     .pipe(gulp.dest('dist/css'))
 });
 
-gulp.task('scripts', () => {
+gulp.task('scripts', function() {
   return gulp.src('scripts/**/*.js')
-    .pipe(babel())
     .pipe(concat('project.js'))
     .pipe(gulp.dest('dist/js'))
 });

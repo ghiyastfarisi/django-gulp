@@ -1,27 +1,25 @@
-import gulp from 'gulp';
-import del from 'del';
+var gulp = require('gulp');
+var del = require('del');
 
-import babel from 'gulp-babel';
-import concat from 'gulp-concat';
+var concat = require('gulp-concat');
 
 
 gulp.task('clean', del.bind(null, ['dist']));
 
 gulp.task('build', ['styles', 'scripts']);
 
-gulp.task('default', ['clean'], () => {
+gulp.task('default', ['clean'], function() {
   gulp.start('build')
 });
 
-gulp.task('styles', () => {
+gulp.task('styles', function() {
   return gulp.src('styles/**/*.css')
     .pipe(concat('project.css'))
     .pipe(gulp.dest('dist/css'))
 });
 
-gulp.task('scripts', () => {
+gulp.task('scripts', function() {
   return gulp.src('scripts/**/*.js')
-    .pipe(babel())
     .pipe(concat('project.js'))
     .pipe(gulp.dest('dist/js'))
 });
