@@ -17,6 +17,7 @@ sudo apt-get update
 sudo apt-get install nodejs
 sudo apt-get install yarn
 sudo apt-get install python3.6
+sudo apt-get install direnv
 
 wget https://bootstrap.pypa.io/get-pip.py
 sudo python3.6 get-pip.py
@@ -43,21 +44,24 @@ cd ..
 
 cd backend
 
-pipenv --python 3.6
+# One of the issues with using pipenv is that it will respect your current
+# virtualenv setup and environment variables such as VIRTUALENVWRAPPER_HOOK_DIR
+# or WORKON_HOME to decide where to create the virtualenv. You cannot specify
+# a name for the environment, instead pipenv uses the name of the parent
+# directory and a hash of the full path. With the way we set up the directory
+# structure we will end up with virtual envs named backend-iuKOlgRf,
+# backend-cPHs7vhr etc. which is pretty confusing. To get around this we will
+# tell pipenv to use the local directory when creating the virtualenv.
+
+cat << EOF >> ~/.bashrc
+
+export PIPENV_VENV_IN_PROJECT=true
+export PIPENV_DEFAULT_PYTHON_VERSION=3.6
+EOF
+
 pipenv install django
 
 django-admin startproject project .
-
-# The first command executed by pipenv will create the virtual environment
-# for the project. pipenv will use the WORKON_HOME environment variable if
-# you have it set so the new environment will be added to you existing ones.
-
-# The name of the environment is taken from the name of the parent directory
-# and a hash of the path. That means if you end up using this layout in several
-# projects you are going to end up with a set of environments all with similar
-# name - which is a little awkward. It also means that you cannot move a
-# project once the environment is created, unless you rebuild it.
-
 
 # --------------------------
 # Update the django settings
