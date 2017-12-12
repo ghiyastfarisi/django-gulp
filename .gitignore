@@ -7,7 +7,6 @@
 !.gitkeep
 !.babelrc
 
-
 db.sqlite3
 
 frontend/dist/
