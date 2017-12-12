@@ -10,6 +10,7 @@ between releases.
 ## 2017-12-12
 ### Changed
 - Simplified the Getting Started section in the README.
+- Added -y flag to yarn init to simplify initial setup.
 
 ## 2017-12-07
 ### Added

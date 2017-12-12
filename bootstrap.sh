@@ -139,9 +139,10 @@ cd ../..
 
 cd frontend
 
-# Create a package.json
+# Create a package.json. The -y option accepts the defaults for the project
+# description - you can update these later.
 
-yarn init
+yarn init -y
 
 # Install babel
 #
