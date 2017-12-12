@@ -8,11 +8,13 @@ will be tagged with dates so you will be able to easily see what changed
 between releases.
 
 ## 2017-12-12
+### Added
+- Added -y flag to yarn init to simplify initial setup.
 ### Changed
 - Simplified the Getting Started section in the README.
-- Added -y flag to yarn init to simplify initial setup.
-- Changed gulp file to only use ECMAScript 5.1 so we don't need babel for transpiling just yet.
+- Gulp file is now ECMAScript 5.1 so we don't need babel.
 - Stripped gulp file down to the bare minimum.
+- pipenv now creates local virtualenv.
 
 ## 2017-12-07
 ### Added
